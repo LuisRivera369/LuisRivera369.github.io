@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    /*background: #E9ECF4;*/
+    background:  #e8d9b7 ;
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr;
+}
+
+.contenedor{
+    width: 90%;
+    max-width: 1000px;
+    margin: 0px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3,1fr);
+    /*grid-template-rows: repeat(3,auto);*/
+    grid-template-rows: auto auto 100%;
+    grid-template-areas:"contenido contenido sidebar"
+                        "widget-1 widget-2 sidebar";
+                        /*"espacio espacio espacio";*/
+    margin-top: 80px;
+
+    /*border: 10px solid red;*/
+    min-height: calc(100vh - 68px - 100px);
+}
+
+.contenedor > div,
+.contenedor .contenido,
+.contenedor .sidebar,
+.header,
+.footer{
+    background: #fff;
+    padding: 20px;
+    /*border-radius: 0px;*/
+    border-style: none;
+}
+
+.header{
+    position: fixed;
+    background: #12203E;
+    /*background:  #e9ddc3 ;*/
+    color: #fff;
+    left: 0;
+    right: 0;
+    border-radius: 0px;
+}
+
+.contenedor .contenido{
+    grid-area: contenido;
+}
+.contenedor .sidebar{
+    background: #faa43d;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: sidebar;
+}
+
+.contenedor .widget-1,
+.contenedor .widget-2{
+    background: #55a8fd;
+    color: #fff;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contenedor .widget-1{
+    grid-area: widget-1;
+}
+.contenedor .widget-2{
+    grid-area: widget-2;
+}
+
+.footer{
+    background: #12203e;
+    color:#fff;
+    width: auto;
+    height: 100px;
+}
+
+@media screen and (max-width: 768px) {
+    .contenedor{
+        grid-template-areas:"contenido contenido contenido"
+                            "sidebar sidebar sidebar"
+                            "widget-1 widget-1 widget-1"
+                            "widget-2 widget-2 widget-2"
+    }
+}
