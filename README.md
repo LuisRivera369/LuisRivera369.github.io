@@ -1,6 +1,6 @@
 # Hello there, I'm Luis Rivera 👋
 
-<img align="right" alt="coding.gif" style="border-radius:20px" src="https://github.com/marcode24/marcode24/blob/main/assets/coding.gif" width="180" />
+<img align="right" alt="coding.gif" style="border-radius:20px" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWh6eGZzYmRiMHltOTZjcnF6MzN1a3R0eWdvamcxMnkxZ2FxM3p6cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2IudUHdI075HL02Pkk/giphy.gif" width="180" />
 
 I am a computer science professional passionate about writing code, solving problems, and building software. This personal repository is a collection of my projects, code, and collaborations in various areas of programming and software development.
 
