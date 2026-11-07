@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "title": "Luis Rivera | Desarrollador Full Stack",
+    "description": "Portafolio personal — proyectos, cursos y habilidades en desarrollo full stack.",
+    "keywords": "desarrollador full stack, Next.js, React, TypeScript, portafolio, Lima, Perú"
+  },
+  "nav": {
+    "links": {
+      "hero": "Inicio",
+      "projects": "Proyectos",
+      "courses": "Cursos",
+      "skills": "Habilidades"
+    },
+    "openMenu": "Abrir navegación",
+    "closeMenu": "Cerrar navegación",
+    "switchLanguage": "Haz clic para cambiar de idioma."
+  },
+  "hero": {
+    "title": "Luis Rivera",
+    "subtitle": "Desarrollador Full Stack",
+    "description": "Creando aplicaciones robustas y escalables con tecnologías web modernas para tu negocio.",
+    "cta": "Visualizar CV",
+    "roles": ["🚀 Desarrollador Full Stack", "📊 Analista de Datos"]
+  },
+  "projects": {
+    "title": "Proyectos",
+    "all": "Todos",
+    "programming": "Programación",
+    "data": "Análisis de Datos",
+    "empty": "No se encontraron proyectos para esta categoría.",
+    "detail": {
+      "back": "Volver a proyectos",
+      "overview": "Descripción general",
+      "highlights": "Lo que construí",
+      "stack": "Tecnologías",
+      "role": "Rol",
+      "year": "Año",
+      "related": "Más proyectos",
+      "sourceCode": "Código fuente",
+      "liveDemo": "Demo en vivo",
+      "viewProject": "Ver caso de estudio",
+      "sourceCodeAria": "Ver código fuente de {title}",
+      "liveDemoAria": "Ver demo en vivo de {title}",
+      "viewProjectAria": "Ver detalles de {title}",
+      "notFound": "Proyecto no encontrado",
+      "notFoundDescription": "El proyecto que buscas no existe o fue movido.",
+      "browseAll": "Ver todos los proyectos"
+    }
+  },
+  "courses": {
+    "title": "Cursos",
+    "all": "Todos",
+    "udemy": "Udemy",
+    "cisco": "Cisco",
+    "certus": "Certus",
+    "idat": "IDAT",
+    "devTalles": "Dev Talles",
+    "empty": "No se encontraron cursos para esta categoría.",
+    "credential": "Credencial",
+    "credentialAria": "Ver credencial de {title}"
+  },
+  "skills": {
+    "title": "Habilidades",
+    "all": "Todas",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "devTools": "Herramientas de Desarrollo",
+    "dataTools": "Herramientas de Datos",
+    "empty": "No se encontraron habilidades para esta categoría."
+  },
+  "footer": {
+    "copyrightPrefix": "© Desarrollado por "
+  },
+  "language": {
+    "switching": "Cambiando idioma…"
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "description": "La página que buscas no existe o fue movida.",
+    "backHome": "Volver al inicio"
+  }
+}

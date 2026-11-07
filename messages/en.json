@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "title": "Luis Rivera | Full Stack Developer",
+    "description": "Personal portfolio — projects, courses and skills in full stack development.",
+    "keywords": "full stack developer, Next.js, React, TypeScript, portfolio, Lima, Peru"
+  },
+  "nav": {
+    "links": {
+      "hero": "Home",
+      "projects": "Projects",
+      "courses": "Courses",
+      "skills": "Skills"
+    },
+    "openMenu": "Open navigation",
+    "closeMenu": "Close navigation",
+    "switchLanguage": "Click to change language."
+  },
+  "hero": {
+    "title": "Luis Rivera",
+    "subtitle": "Full Stack Developer",
+    "description": "Building robust, scalable applications with modern web technologies.",
+    "cta": "Visualize CV",
+    "roles": ["🚀 Full Stack Developer", "📊 Data Analyst"]
+  },
+  "projects": {
+    "title": "Projects",
+    "all": "All",
+    "programming": "Programming",
+    "data": "Data Analysis",
+    "empty": "No projects found for this category.",
+    "detail": {
+      "back": "Back to projects",
+      "overview": "Overview",
+      "highlights": "What I built",
+      "stack": "Stack",
+      "role": "Role",
+      "year": "Year",
+      "related": "More projects",
+      "sourceCode": "Source code",
+      "liveDemo": "Live demo",
+      "viewProject": "View case study",
+      "sourceCodeAria": "View source code for {title}",
+      "liveDemoAria": "View live demo for {title}",
+      "viewProjectAria": "View details for {title}",
+      "notFound": "Project not found",
+      "notFoundDescription": "The project you are looking for does not exist or has been moved.",
+      "browseAll": "Browse all projects"
+    }
+  },
+  "courses": {
+    "title": "Courses",
+    "all": "All",
+    "udemy": "Udemy",
+    "cisco": "Cisco",
+    "certus": "Certus",
+    "idat": "IDAT",
+    "devTalles": "Dev Talles",
+    "empty": "No courses found for this category.",
+    "credential": "Credential",
+    "credentialAria": "View credential for {title}"
+  },
+  "skills": {
+    "title": "Skills",
+    "all": "All",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "devTools": "Dev Tools",
+    "dataTools": "Data Tools",
+    "empty": "No skills found for this category."
+  },
+  "footer": {
+    "copyrightPrefix": "© Made by "
+  },
+  "language": {
+    "switching": "Switching language…"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist or has been moved.",
+    "backHome": "Back to home"
+  }
+}

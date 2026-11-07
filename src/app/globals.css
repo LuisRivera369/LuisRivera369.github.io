@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes:
+    dark --default,
+    light;
+}
+
+@theme inline {
+  --color-brand-orange: #f97316;
+}
+
+/* ── Smooth scroll global ── */
+/* `auto` here: the JS helper owns the animation. Leaving this on `smooth`
+   would queue a second, competing animation. The navbar offset lives in
+   `SectionShell` (`scroll-mt-16`) for native anchors and in `NAVBAR_OFFSET`
+   for the JS path — never both, or they add up. */
+html {
+  scroll-behavior: auto;
+}
+
+/* ── Dark theme (default) «Ember Refined» ── */
+[data-theme="dark"] {
+  --color-base-100: #0a0a0a;
+  --color-base-200: #141414;
+  --color-base-300: #1e1e1e;
+  --color-base-content: #fafafa;
+  --color-primary: #f97316;
+  --color-primary-content: #0a0a0a;
+  --color-secondary: #8b5cf6;
+  --color-secondary-content: #fafafa;
+  --color-accent: #2dd4bf;
+  --color-accent-content: #0a0a0a;
+  --color-neutral: #262626;
+  --color-neutral-content: #a3a3a3;
+}
+
+/* ── Light theme «Ember Refined» ── */
+[data-theme="light"] {
+  --color-base-100: #ffffff;
+  --color-base-200: #f3f4f6;
+  --color-base-300: #e5e7eb;
+  --color-base-content: #0f172a;
+  --color-primary: #ea580c;
+  --color-primary-content: #ffffff;
+  --color-secondary: #7c3aed;
+  --color-secondary-content: #ffffff;
+  --color-accent: #0d9488;
+  --color-accent-content: #ffffff;
+  --color-neutral: #d1d5db;
+  --color-neutral-content: #4b5563;
+}
+
+/* ── Scroll reveal transitions ── */
+.scroll-reveal {
+  transition:
+    opacity 1000ms ease-out,
+    transform 1000ms ease-out;
+}
+
+.scroll-reveal[data-visible="false"] {
+  opacity: 0;
+  transform: var(--reveal-transform, translateY(1rem));
+}
+
+.scroll-reveal[data-visible="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Card enter animation (pagination) ── */
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-enter {
+  animation-name: cardEnter;
+  animation-duration: 1500ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: backwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-enter {
+    animation: none;
+  }
+}
+
+/* ── Floating navbar glass backdrop ── */
+.navbar-blur {
+  backdrop-filter: blur(16px) saturate(1.8);
+  -webkit-backdrop-filter: blur(16px) saturate(1.8);
+}
+
+/* ── Route enter transition (replays on each navigation) ── */
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.page-enter {
+  animation: pageEnter 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ── Locale switch crossfade ── */
+main,
+footer {
+  transition: opacity 500ms ease;
+}
+
+html[data-locale-switching] main,
+html[data-locale-switching] footer {
+  opacity: 0.35;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* The JS scroll helper already jumps instantly; keep native anchors and
+     route transitions instant too. */
+  html {
+    scroll-behavior: auto;
+  }
+
+  .scroll-reveal {
+    transition: none;
+  }
+
+  .scroll-reveal[data-visible="false"] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .page-enter {
+    animation: none;
+  }
+
+  main,
+  footer {
+    transition: none;
+  }
+
+  html[data-locale-switching] main,
+  html[data-locale-switching] footer {
+    opacity: 1;
+  }
+}
