@@ -169,38 +169,50 @@ export const projects: readonly Project[] = [
   {
     slug: "footloose-dashboard",
     title: {
-      en: "Footloose Sales Dashboard",
-      es: "Footloose Dashboard de Ventas",
+      en: "Footloose: Sales Dashboard",
+      es: "Footloose: Dashboard de Ventas",
     },
     summary: {
-      en: "Sales analytics dashboard with dynamic charts, filters and exportable reports.",
-      es: "Panel de análisis de ventas con gráficos dinámicos, filtros e informes exportables.",
+      en: "End-to-end sales analytics project: a Databricks medallion pipeline feeding a star-schema Power BI dashboard.",
+      es: "Proyecto end-to-end de analítica de ventas: pipeline medallion en Databricks que alimenta un dashboard en Power BI con modelo estrella.",
     },
     description: {
-      en: "An end-to-end sales analysis for a retail dataset: cleaning and aggregation in Python with Pandas, exploratory queries in SQL, and a Tableau dashboard that lets the business team slice revenue by period, category and channel before exporting the results.",
-      es: "Un análisis de ventas de extremo a extremo para un conjunto de datos de retail: limpieza y agregación en Python con Pandas, consultas exploratorias en SQL y un dashboard en Tableau que permite al equipo de negocio segmentar ingresos por período, categoría y canal antes de exportar los resultados.",
+      en: "A retail sales case study covering the full analytics stack. Raw CSVs and JSON transactions are ingested into Databricks with Spark Structured Streaming and Auto Loader, then refined through a bronze → silver → gold architecture using PySpark and Delta Lake, with idempotent MERGE upserts on each layer. The gold fact table feeds a Power BI model in import mode built as a star schema with a dedicated DAX calendar, explicit measures and a custom dark theme across desktop and mobile views.",
+      es: "Caso de estudio de ventas retail que recorre todo el stack analítico. Los CSV y las transacciones JSON crudas se ingieren en Databricks con Spark Structured Streaming y Auto Loader, y se refinan mediante una arquitectura bronze → silver → gold con PySpark y Delta Lake, usando upserts idempotentes con MERGE en cada capa. La tabla de hechos gold alimenta un modelo de Power BI en modo importación con esquema estrella, tabla de fechas calculada en DAX, medidas explícitas y tema oscuro personalizado para las vistas de escritorio y móvil.",
     },
     highlights: {
       en: [
-        "ETL pipeline in Python and Pandas for cleaning and aggregating sales data",
-        "Interactive Tableau dashboard with period, category and channel filters",
-        "Exportable reports that support recurring business decisions",
+        "Medallion pipeline in Databricks (bronze, silver, gold) with Spark Structured Streaming and Auto Loader checkpoints",
+        "Idempotent Delta Lake writes: MERGE by business key with foreachBatch so retries never duplicate rows",
+        "Power BI star schema in import mode with M:1 relationships and a dedicated DAX calendar table",
+        "Two-page dashboard (desktop and mobile) with KPI cards, bubble map, cross-filtering and a clear-filters action",
       ],
       es: [
-        "Pipeline ETL en Python y Pandas para limpiar y agregar los datos de ventas",
-        "Dashboard interactivo en Tableau con filtros por período, categoría y canal",
-        "Informes exportables que apoyan decisiones de negocio recurrentes",
+        "Pipeline medallion en Databricks (bronze, silver, gold) con Spark Structured Streaming y checkpoints de Auto Loader",
+        "Escrituras idempotentes en Delta Lake: MERGE por clave de negocio con foreachBatch para que los reintentos no dupliquen filas",
+        "Esquema estrella en Power BI en modo importación con relaciones M:1 y tabla de fechas dedicada en DAX",
+        "Dashboard de dos páginas (escritorio y móvil) con tarjetas KPI, mapa de burbujas, filtrado cruzado y botón para limpiar filtros",
       ],
     },
     role: {
-      en: "Data Analyst",
-      es: "Analista de Datos",
+      en: "Data Analyst & BI Developer",
+      es: "Analista de Datos y Desarrollador BI",
     },
     year: 2025,
     image: "/imagenes/projects/footloose.webp",
-    tags: ["Python", "Pandas", "Tableau", "SQL"],
+    tags: [
+      "Power BI",
+      "Databricks",
+      "PySpark",
+      "Delta Lake",
+      "DAX",
+      "Spark Streaming",
+      "ELT",
+    ],
     category: "data",
-    githubUrl: "https://github.com/LuisRivera369/sales-dashboard",
+    githubUrl: "https://github.com/LuisRivera369/footloose-sales-dashboard",
+    liveUrl:
+      "https://app.powerbi.com/view?r=eyJrIjoiYjliZjc4ODYtNWQ4Ni00OTFiLTk2MTQtZTE4MGRhYTZiNTUzIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9",
   },
   {
     slug: "portfolio-website",
@@ -272,7 +284,10 @@ export function getProjectSlugs(): string[] {
 }
 
 /** Other projects in the same category, excluding the current one. */
-export function getRelatedProjects(slug: string, limit = 3): readonly Project[] {
+export function getRelatedProjects(
+  slug: string,
+  limit = 3,
+): readonly Project[] {
   const current = getProjectBySlug(slug);
   if (!current) return [];
 
